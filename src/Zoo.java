@@ -22,7 +22,7 @@ public class Zoo {
    * @param list list of birds of particular type
    * @param bird new bird
    */
-  public static void acceptBird(List<FlyingBird> list, FlyingBird bird) {
+  public static void acceptBird(List<? super FlyingBird> list, FlyingBird bird) {
     // TODO fix method declaration
     bird.checkWings();
     list.add(bird);
