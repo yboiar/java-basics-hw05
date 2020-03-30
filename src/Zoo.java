@@ -5,37 +5,38 @@ public class Zoo {
   /**
    * Feeds different bird sections of the zoo.
    *
-   * @param list list of birds of particular type
+   * @param list list of birds of particular type.
    */
-  public static void feed(List list) {
-    // TODO fix method declaration
-    System.out.println("Feeding birds");
-    // TODO print birds in the cycle
+  public static void feed (List<? extends Bird> list) {
+    for (Bird bird : list) {
+      bird.eat();
+    }
   }
 
   /**
    * Adds birds to a flying section of the zoo.
    *
-   * @param list list of birds of particular type
-   * @param bird new bird
+   * @param list list of birds of particular type.
+   * @param bird a new bird.
    */
-  public static void acceptBird(List list, FlyingBird bird) {
-    // TODO fix method declaration
-    System.out.println("Accepting bird to a section");
-    // TODO check flying bird wings
-    // TODO add bird to the list and print it
+  public static void acceptBird(List<? super FlyingBird> list, FlyingBird bird) {
+    System.out.println("Accepting a bird to a section");
+    bird.checkWings();
+    list.add(bird);
   }
 
   /**
    * Adds bird to the general list.
    *
-   * @param list    list of birds
-   * @param newBird bird to add
+   * @param list    list of birds.
+   * @param newBird bird to add.
    */
-  public static void registerBird(List list, Bird newBird) {
-    // TODO fix method declaration
-    System.out.println("Adding bird to the birds list");
-    // TODO add bird to list
-    // TODO print birds in the cycle
+  public static void registerBird(List<Bird> list, Bird newBird) {
+    System.out.println("Adding a bird to the birds list");
+
+    list.add(newBird);
+    for (Bird bird : list) {
+      System.out.println(bird.toString());
+    }
   }
 }
