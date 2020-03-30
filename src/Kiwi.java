@@ -1,4 +1,4 @@
-public class Kiwi extends NonFlyingBird{
+public class Kiwi extends NonFlyingBird {
 
     @Override
     public String toString() {
